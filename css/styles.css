@@ -1,10 +1,226 @@
+/*=============================================
+=            AUTHOR COMMENTS            =
+=============================================*/
+/* Name: Chris Adams                         */
+/* Last Edited: 17/02/2021                   */
+/* Project: FEWD Techdegree Unit 3           */
+/*=====     End of AUTHOR COMMENTS     ======*/
 
-/**
- *
- * Font used in form: font-family: 'Merriweather', serif;
- *
- */
- 
- * {
-     box-sizing: border-box;
- }
+
+/*=============================================
+=                 Main Styles                 =
+=============================================*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-family: 'Merriweather', serif; 
+    color: rgba(106, 117, 129, 1);
+    background-color: rgba(235, 238, 240, 0.356);
+    font-size: 0.9em;
+}
+
+header,
+.blurb,
+footer {
+    text-align: center;
+}
+
+h2,
+legend {
+    color: rgba(45,57,69,1);
+    font-size: 1.2em;
+}
+
+.wrapper {
+    width: 90%;
+}
+
+/*=============================================
+=                   HEADER                    =
+=============================================*/
+header {
+    background-color: rgba(45,57,69,1);
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    padding: 1.8vw;
+    font-size: 0.55em;
+    text-transform: uppercase;
+}
+.blurb {
+    margin-bottom: 5px;
+    border-bottom: 3px solid rgba(45,57,69,1);
+    padding: 10px 0 35px;
+    font-size: 0.9rem;
+}
+.blurb p {
+    color: rgba(169,175,179,1);
+    width: 100%;
+    margin: auto;
+}
+
+
+/*=============================================
+=                    FORM                     =
+=============================================*/
+
+/* Defines border at top of each fieldset */
+.fieldset-container {
+    border-top: 1.5px solid rgba(45,57,69,1);
+    padding-top: 20px;
+}
+
+/* form row structure */
+fieldset,
+.form-row {
+    border: none;
+    display: flex;
+    flex-flow: column;
+    padding: 10px 0;
+}
+
+/* legend styling */
+legend {
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+/* styles curved borders of elements */
+input, 
+select,
+textarea, 
+button {
+    border-radius: 5px;
+}
+
+/* stretches input field to width of screen */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input,
+select,
+textarea {
+    background-color: rgba(239, 239, 239, 1);
+    border: none;
+    padding: 15px;
+    margin: 10px 0 20px;
+    align-self: stretch;
+    transition: background-color 1s linear, color 1s;
+}
+
+/* styles placeholder text in input field to the right */
+input::placeholder {
+    color:rgba(189, 193, 197, 1);
+    text-align: right;
+    font-style: italic;
+}
+
+/* styles the first select option as grey, then turns off display */
+select:required:invalid {
+    color:rgba(189, 193, 197, 1);
+}
+option[value=""][disabled] {
+    display: none;
+}
+
+/* styles width of zip code elements */
+#zip {
+    width: 50%;
+}
+#zip[type="text"], 
+#zip::placeholder {
+    text-align: center;
+    letter-spacing: 0.7em;
+}
+
+/* creates margin to the right of the buttons */
+input[type="radio"], 
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* focus element styles */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 1px auto rgba(0, 56, 115, 0.5);
+    background-color: rgba(0, 56, 115, 0.5);
+    color: white;
+}
+
+/* checked element styles */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    filter: hue-rotate(5deg) brightness(1.4);
+}
+
+/* bottom submit button styles */
+button {
+    display: flex;
+    padding: 20px 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(78, 187, 181, 1);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+}
+
+/*=============================================
+=               FOOTER STYLING               =
+=============================================*/
+footer {
+    text-align: center;
+    font-style: italic;
+    padding: 15px 0;
+}
+
+/*=============================================
+=                MEDIA STYLING                =
+=============================================*/
+
+@media screen and (min-width:768px) {
+    /* adjusts wrapper to dimensions of mockup */
+    .wrapper {
+        width: 50%;
+        font-size: 0.8em;
+    }
+
+    /* additional tablet styling to top blurb */
+    .blurb {
+        padding: 30px 0 40px;
+    }
+    .blurb p {
+        font-size: 0.8em;
+    }
+
+    /* aligns form content on rows */
+    .form-row {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+    }
+    .form-row label {
+        width: 30%;
+    }
+    .form-row input,
+    .form-row select {
+        width: 70%;
+        margin: 0;
+    } 
+
+    /* adjusts zip code display on tablet */
+    #zip::placeholder {
+    text-align: right;
+    }
+    #zip[type="text"] {
+        text-align: left;
+    }
+}
